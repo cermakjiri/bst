@@ -1,6 +1,6 @@
 {
     "name": "bst-extended",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Binary search tree implemented in JavaScript.",
     "main": "build/bst-extended.js",
     "scripts": {
