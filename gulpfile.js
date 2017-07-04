@@ -14,9 +14,22 @@ const mocha = require("gulp-mocha");
 const browserSync = require("browser-sync").create();
 const pkg = require("./package.json");
 
+const babel = require("gulp-babel");
+
 const minify = composer(uglifyjs, console);
 
 const presets = pkg.babel.presets;
+
+function compileES6() {
+    return gulp
+        .src(["src/*.js", "!src/*.test.js"])
+        .pipe(
+            babel({
+                presets: presets
+            })
+        )
+        .pipe(gulp.dest("build"));
+}
 
 function compileCore() {
     return browserify({
@@ -120,7 +133,8 @@ function test() {
 
 gulp.task(clean);
 
-gulp.task("build", gulp.series(clean, compileCore, compressCore));
+// gulp.task("build", gulp.series(clean, compileCore, compressCore));
+gulp.task("build", gulp.series(clean, compileES6));
 
 gulp.task("watch", watch);
 
