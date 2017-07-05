@@ -72,21 +72,21 @@ function compileLab() {
         .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest("lab/build"));
 }
-
-function compressCore() {
-    return gulp
-        .src(`build/${pkg.name}.js`)
-        .pipe(
-            rename({
-                basename: pkg.name,
-                suffix: ".min"
-            })
-        )
-        .pipe(sourcemaps.init())
-        .pipe(minify())
-        .pipe(sourcemaps.write(`./`))
-        .pipe(gulp.dest("build"));
-}
+//
+// function compressCore() {
+//     return gulp
+//         .src(`build/${pkg.name}.js`)
+//         .pipe(
+//             rename({
+//                 basename: pkg.name,
+//                 suffix: ".min"
+//             })
+//         )
+//         .pipe(sourcemaps.init())
+//         .pipe(minify())
+//         .pipe(sourcemaps.write(`./`))
+//         .pipe(gulp.dest("build"));
+// }
 
 function clean() {
     return exec(`rm -rf ./build/`);
@@ -137,8 +137,8 @@ function test() {
 
 gulp.task(clean);
 
-gulp.task("build", gulp.series(clean, compileCore, compressCore));
-// gulp.task("build", gulp.series(clean, compileCore));
+// gulp.task("build", gulp.series(clean, compileCore, compressCore));
+gulp.task("build", gulp.series(clean, compileCore));
 
 gulp.task("watch", watch);
 
