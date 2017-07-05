@@ -8,8 +8,7 @@
         "start": "gulp serve",
         "watch": "gulp watch",
         "test": "gulp test",
-        "mocha": "mocha --compilers js:babel-core/register ./test/*.js",
-        "publish": "echo new version!!!"
+        "mocha": "mocha --compilers js:babel-core/register ./test/*.js"
     },
     "repository": {
         "type": "git",
