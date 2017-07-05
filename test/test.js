@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import BST from "../build/bst-extended";
+import BST from "../bst-extended";
 
 describe("build/bst-extended.js - BinarySearchTree class", () => {
     describe("Test default type (number)", () => {
