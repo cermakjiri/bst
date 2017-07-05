@@ -47,7 +47,7 @@ function compileCore() {
             .pipe(buffer())
             // .pipe(sourcemaps.init())
             // .pipe(sourcemaps.write("./"))
-            .pipe(gulp.dest("build"))
+            .pipe(gulp.dest("./"))
     );
 }
 
@@ -89,7 +89,7 @@ function compileLab() {
 // }
 
 function clean() {
-    return exec(`rm -rf ./build/`);
+    return exec(`rm -f ./${pkg.name}.js`);
 }
 
 function serve() {
