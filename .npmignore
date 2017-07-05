@@ -1,0 +1,13 @@
+
+# .git
+
+node_modules
+
+src/
+test/
+lab/
+
+gulpfile.js
+# package.json
+# package-lock.json
+# .gitignore
