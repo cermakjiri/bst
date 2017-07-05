@@ -2,7 +2,7 @@
     "name": "bst-extended",
     "version": "0.1.0",
     "description": "Binary search tree implemented in JavaScript.",
-    "main": "build/bst-extended.min.js",
+    "main": "build/bst-extended.js",
     "scripts": {
         "build": "gulp build",
         "start": "gulp serve",
